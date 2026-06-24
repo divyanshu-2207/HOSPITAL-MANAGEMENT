@@ -1,0 +1,438 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>MediCare General Hospital</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════
+     NAVIGATION
+═══════════════════════════════════════════ -->
+<nav class="navbar" id="navbar">
+  <div class="nav-brand">
+    <div class="nav-logo">
+      <svg width="36" height="36" viewBox="0 0 36 36"><rect x="14" y="4" width="8" height="28" rx="2" fill="var(--accent)"/><rect x="4" y="14" width="28" height="8" rx="2" fill="var(--accent)"/></svg>
+      <span>MediCare</span>
+    </div>
+    <div class="nav-links" id="navLinks">
+      <a href="#home">Home</a>
+      <a href="#services">Services</a>
+      <a href="#doctors">Doctors</a>
+      <a href="#appointment">Appointments</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+  <div class="nav-actions">
+    <button class="btn-emergency" onclick="callEmergency()">🚨 Emergency</button>
+    <button class="btn-login" onclick="openModal('loginModal')">Login / Register</button>
+    <button class="nav-toggle" onclick="toggleNav()">☰</button>
+  </div>
+</nav>
+
+<!-- ═══════════════════════════════════════════
+     PAGE 1: HERO
+═══════════════════════════════════════════ -->
+<section class="hero" id="home">
+  <div class="hero-bg">
+    <div class="hero-blob blob1"></div>
+    <div class="hero-blob blob2"></div>
+    <div class="hero-blob blob3"></div>
+  </div>
+  <div class="hero-content">
+    <div class="hero-badge">⭐ Ranked #1 Hospital in the Region 2024</div>
+    <h1 class="hero-title">
+      Compassionate Care,<br>
+      <em>Exceptional Healing.</em>
+    </h1>
+    <p class="hero-sub">World-class medical expertise delivered with warmth and precision. Your health is our highest calling — every patient, every day.</p>
+    <div class="hero-cta">
+      <button class="btn-primary" onclick="scrollTo('appointment')">Book Appointment</button>
+      <button class="btn-secondary" onclick="scrollTo('services')">Our Services</button>
+    </div>
+    <div class="hero-stats">
+      <div class="stat"><span class="stat-num" data-target="850">0</span><span>+</span><p>Expert Doctors</p></div>
+      <div class="stat"><span class="stat-num" data-target="5 0000">0</span><span>+</span><p>Patients Served</p></div>
+      <div class="stat"><span class="stat-num" data-target="120">0</span><span>+</span><p>Specialties</p></div>
+      <div class="stat"><span class="stat-num" data-target="25">0</span><span>yrs</span><p>Of Excellence</p></div>
+    </div>
+  </div>
+  <div class="hero-visual">
+    <div class="hero-card-float card-f1">
+      <div class="fc-icon">🩺</div>
+      <div><strong>24/7 Emergency</strong><p>Always available</p></div>
+    </div>
+    <div class="hero-card-float card-f2">
+      <div class="fc-icon">🏆</div>
+      <div><strong>ISO Certified</strong><p>Quality assured</p></div>
+    </div>
+    <div class="hero-img-wrap">
+      <div class="hero-img-placeholder">
+        <svg viewBox="0 0 300 400" xmlns="http://www.w3.org/2000/svg">
+          <rect width="300" height="400" rx="20" fill="#e8f4f8"/>
+          <circle cx="150" cy="120" r="60" fill="#b8d9e8"/>
+          <rect x="80" y="200" width="140" height="180" rx="10" fill="#cce4f0"/>
+          <rect x="130" y="160" width="40" height="60" rx="5" fill="#8cc5dd"/>
+          <!-- Doctor silhouette -->
+          <circle cx="150" cy="100" r="40" fill="#4a90b8"/>
+          <rect x="100" y="140" width="100" height="130" rx="15" fill="#2d6e9e"/>
+          <rect x="135" y="155" width="30" height="50" rx="5" fill="white" opacity="0.3"/>
+          <rect x="138" y="158" width="6" height="44" rx="2" fill="white" opacity="0.8"/>
+          <rect x="158" y="158" width="6" height="44" rx="2" fill="white" opacity="0.8"/>
+          <rect x="138" y="176" width="26" height="6" rx="2" fill="white" opacity="0.8"/>
+          <!-- Stethoscope -->
+          <circle cx="150" cy="100" r="15" fill="#1a4f70"/>
+          <text x="143" y="106" font-size="16" fill="white">🩺</text>
+        </svg>
+      </div>
+    </div>
+    <div class="hero-card-float card-f3">
+      <div class="fc-icon">💊</div>
+      <div><strong>Modern Pharmacy</strong><p>In-house dispensary</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     PAGE 2: SERVICES
+═══════════════════════════════════════════ -->
+<section class="section services-section" id="services">
+  <div class="section-header">
+    <div class="section-tag">What We Offer</div>
+    <h2>World-Class <em>Medical Services</em></h2>
+    <p>Comprehensive healthcare solutions across 120+ specialties, powered by cutting-edge technology and expert physicians.</p>
+  </div>
+  <div class="services-grid">
+    <div class="service-card" data-aos="fade-up">
+      <div class="sc-icon">❤️</div>
+      <h3>Cardiology</h3>
+      <p>Advanced cardiac care including angioplasty, bypass surgery, and heart failure management with state-of-the-art cath labs.</p>
+      <a href="#appointment" class="sc-link">Book Consultation →</a>
+    </div>
+    <div class="service-card featured" data-aos="fade-up" data-aos-delay="100">
+      <div class="sc-icon">🧠</div>
+      <h3>Neurology</h3>
+      <p>Expert neurological diagnosis and treatment including stroke care, epilepsy management, and neurosurgery.</p>
+      <a href="#appointment" class="sc-link">Book Consultation →</a>
+    </div>
+    <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+      <div class="sc-icon">🦴</div>
+      <h3>Orthopedics</h3>
+      <p>Joint replacements, spine surgery, sports medicine and trauma care with advanced robotic-assisted procedures.</p>
+      <a href="#appointment" class="sc-link">Book Consultation →</a>
+    </div>
+    <div class="service-card" data-aos="fade-up" data-aos-delay="300">
+      <div class="sc-icon">👶</div>
+      <h3>Pediatrics</h3>
+      <p>Comprehensive child healthcare from newborn care to adolescent medicine, with a dedicated NICU and PICU.</p>
+      <a href="#appointment" class="sc-link">Book Consultation →</a>
+    </div>
+    <div class="service-card" data-aos="fade-up" data-aos-delay="400">
+      <div class="sc-icon">🔬</div>
+      <h3>Oncology</h3>
+      <p>Multidisciplinary cancer treatment including chemotherapy, radiation therapy, and targeted immunotherapy.</p>
+      <a href="#appointment" class="sc-link">Book Consultation →</a>
+    </div>
+    <div class="service-card" data-aos="fade-up" data-aos-delay="500">
+      <div class="sc-icon">🫁</div>
+      <h3>Pulmonology</h3>
+      <p>Diagnosis and treatment of respiratory conditions, including advanced bronchoscopy and sleep disorder clinics.</p>
+      <a href="#appointment" class="sc-link">Book Consultation →</a>
+    </div>
+    <div class="service-card" data-aos="fade-up">
+      <div class="sc-icon">🏥</div>
+      <h3>Emergency Care</h3>
+      <p>24/7 emergency services with rapid triage, trauma bays, and a level-1 trauma center designation.</p>
+      <a href="#appointment" class="sc-link">Book Consultation →</a>
+    </div>
+    <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+      <div class="sc-icon">👁️</div>
+      <h3>Ophthalmology</h3>
+      <p>Advanced eye care including LASIK, cataract surgery, retinal procedures and pediatric ophthalmology.</p>
+      <a href="#appointment" class="sc-link">Book Consultation →</a>
+    </div>
+    <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+      <div class="sc-icon">🧬</div>
+      <h3>Diagnostics & Lab</h3>
+      <p>NABL-accredited labs with advanced imaging — MRI, CT, PET scans, and genetic testing capabilities.</p>
+      <a href="#appointment" class="sc-link">Book Consultation →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     PAGE 3: DOCTORS
+═══════════════════════════════════════════ -->
+<section class="section doctors-section" id="doctors">
+  <div class="section-header">
+    <div class="section-tag">Our Team</div>
+    <h2>Meet Our <em>Expert Physicians</em></h2>
+    <p>500+ board-certified specialists dedicated to delivering the highest standard of patient-centred care.</p>
+  </div>
+
+  <div class="doctors-filter">
+    <button class="filter-btn active" onclick="filterDoctors('all', this)">All</button>
+    <button class="filter-btn" onclick="filterDoctors('cardiology', this)">Cardiology</button>
+    <button class="filter-btn" onclick="filterDoctors('neurology', this)">Neurology</button>
+    <button class="filter-btn" onclick="filterDoctors('orthopedics', this)">Orthopedics</button>
+    <button class="filter-btn" onclick="filterDoctors('pediatrics', this)">Pediatrics</button>
+  </div>
+
+  <div class="doctors-grid" id="doctorsGrid">
+    <!-- Filled by JS -->
+  </div>
+
+  <div class="doctors-load-more">
+    <button class="btn-outline" onclick="loadMoreDoctors()">Load More Doctors</button>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     PAGE 4: APPOINTMENT
+═══════════════════════════════════════════ -->
+<section class="section appointment-section" id="appointment">
+  <div class="appt-left">
+    <div class="section-tag">Book Now</div>
+    <h2>Schedule Your <em>Appointment</em></h2>
+    <p>Fast, easy, and secure. Book in under 2 minutes with instant confirmation. Our coordinators are here to help.</p>
+    <div class="appt-features">
+      <div class="af"><span>✅</span> Instant confirmation</div>
+      <div class="af"><span>✅</span> No waiting — priority scheduling</div>
+      <div class="af"><span>✅</span> Online & in-person options</div>
+      <div class="af"><span>✅</span> Follow-up reminders via SMS</div>
+    </div>
+    <div class="appt-contact-box">
+      <div class="acb-item">📞 <span>+91-7500-XXX-XXX</span></div>
+      <div class="acb-item">📧 <span>appointments@medicare-hospital.in</span></div>
+    </div>
+  </div>
+  <div class="appt-right">
+    <div class="appt-form-card">
+      <h3>Book an Appointment</h3>
+      <div class="form-group">
+        <label>Full Name *</label>
+        <input type="text" id="apptName" placeholder="Your full name" />
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label>Phone *</label>
+          <input type="tel" id="apptPhone" placeholder="+91 XXXXX XXXXX" />
+        </div>
+        <div class="form-group">
+          <label>Email</label>
+          <input type="email" id="apptEmail" placeholder="you@email.com" />
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label>Department *</label>
+          <select id="apptDept">
+            <option value="">Select Dept.</option>
+            <option>Cardiology</option>
+            <option>Neurology</option>
+            <option>Orthopedics</option>
+            <option>Pediatrics</option>
+            <option>Oncology</option>
+            <option>Pulmonology</option>
+            <option>Emergency Care</option>
+            <option>Ophthalmology</option>
+            <option>General Medicine</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Preferred Date *</label>
+          <input type="date" id="apptDate" />
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Preferred Time</label>
+        <select id="apptTime">
+          <option value="">Select Time Slot</option>
+          <option>09:00 AM - 10:00 AM</option>
+          <option>10:00 AM - 11:00 AM</option>
+          <option>11:00 AM - 12:00 PM</option>
+          <option>02:00 PM - 03:00 PM</option>
+          <option>03:00 PM - 04:00 PM</option>
+          <option>04:00 PM - 05:00 PM</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Brief Description of Concern</label>
+        <textarea id="apptNote" rows="3" placeholder="Describe your symptoms or reason for visit..."></textarea>
+      </div>
+      <button class="btn-primary full-w" onclick="bookAppointment()">Confirm Appointment</button>
+      <p class="form-note">* Required fields. You'll receive confirmation via SMS/Email.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     PAGE 5: CONTACT & FOOTER
+═══════════════════════════════════════════ -->
+<section class="section contact-section" id="contact">
+  <div class="section-header">
+    <div class="section-tag">Find Us</div>
+    <h2>Get in <em>Touch</em></h2>
+    <p>Visit us, call us, or send a message — we're always here for you.</p>
+  </div>
+
+  <div class="contact-grid">
+    <div class="contact-info">
+      <div class="ci-card">
+        <div class="ci-icon">📍</div>
+        <h4>Address</h4>
+        <p>MediCare General Hospital<br>Civil Lines, Prayagraj<br>Uttar Pradesh - 211001</p>
+      </div>
+      <div class="ci-card">
+        <div class="ci-icon">📞</div>
+        <h4>Phone</h4>
+        <p>General: +91-7500-000-001<br>Emergency: +91-7500-000-999<br>Appointment: +91-7500-000-002</p>
+      </div>
+      <div class="ci-card">
+        <div class="ci-icon">⏰</div>
+        <h4>Hours</h4>
+        <p>OPD: Mon–Sat, 8AM–8PM<br>Emergency: 24/7<br>Lab: Mon–Sun, 7AM–9PM</p>
+      </div>
+      <div class="ci-card">
+        <div class="ci-icon">📧</div>
+        <h4>Email</h4>
+        <p>info@medicare-hospital.in<br>appointments@medicare-hospital.in</p>
+      </div>
+    </div>
+
+    <div class="contact-form-card">
+      <h3>Send Us a Message</h3>
+      <div class="form-group">
+        <label>Your Name</label>
+        <input type="text" id="ctName" placeholder="Full name" />
+      </div>
+      <div class="form-group">
+        <label>Email Address</label>
+        <input type="email" id="ctEmail" placeholder="you@email.com" />
+      </div>
+      <div class="form-group">
+        <label>Subject</label>
+        <input type="text" id="ctSubject" placeholder="How can we help?" />
+      </div>
+      <div class="form-group">
+        <label>Message</label>
+        <textarea id="ctMessage" rows="4" placeholder="Write your message here..."></textarea>
+      </div>
+      <button class="btn-primary full-w" onclick="sendContact()">Send Message</button>
+    </div>
+  </div>
+
+  <!-- Map placeholder -->
+  <div class="map-container">
+    <div class="map-placeholder">
+      <div class="map-pin">📍</div>
+      <p>MediCare General Hospital — Prayagraj, UP</p>
+      <p class="map-note">Interactive map integration available with Google Maps API key</p>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-top">
+    <div class="footer-brand">
+      <div class="nav-logo">
+        <svg width="32" height="32" viewBox="0 0 36 36"><rect x="14" y="4" width="8" height="28" rx="2" fill="var(--accent)"/><rect x="4" y="14" width="28" height="8" rx="2" fill="var(--accent)"/></svg>
+        <span>MediCare</span>
+      </div>
+      <p>Compassionate care for every patient. Our mission is to deliver outstanding healthcare with warmth, precision, and integrity.</p>
+      <div class="footer-social">
+        <a href="#" aria-label="Facebook">f</a>
+        <a href="#" aria-label="Twitter">𝕏</a>
+        <a href="#" aria-label="Instagram">📷</a>
+        <a href="#" aria-label="YouTube">▶</a>
+      </div>
+    </div>
+    <div class="footer-links">
+      <h4>Quick Links</h4>
+      <a href="#home">Home</a>
+      <a href="#services">Services</a>
+      <a href="#doctors">Doctors</a>
+      <a href="#appointment">Appointments</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <div class="footer-links">
+      <h4>Departments</h4>
+      <a href="#">Cardiology</a>
+      <a href="#">Neurology</a>
+      <a href="#">Oncology</a>
+      <a href="#">Orthopedics</a>
+      <a href="#">Pediatrics</a>
+    </div>
+    <div class="footer-links">
+      <h4>Patient Services</h4>
+      <a href="#">Patient Portal</a>
+      <a href="#">Online Reports</a>
+      <a href="#">Insurance & Billing</a>
+      <a href="#">Health Packages</a>
+      <a href="#">Blood Bank</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2024 MediCare General Hospital. All rights reserved. | Privacy Policy | Terms of Service</p>
+  </div>
+</footer>
+
+<!-- ═══════════════════════════════════════════
+     MODALS
+═══════════════════════════════════════════ -->
+
+<!-- Login/Register Modal -->
+<div class="modal-overlay" id="loginModal" onclick="closeModalOuter(event,'loginModal')">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal('loginModal')">✕</button>
+    <div class="modal-tabs">
+      <button class="tab active" onclick="switchTab('login')">Login</button>
+      <button class="tab" onclick="switchTab('register')">Register</button>
+    </div>
+
+    <div id="loginForm">
+      <h3>Welcome Back</h3>
+      <div class="form-group"><label>Email</label><input type="email" id="loginEmail" placeholder="you@email.com"/></div>
+      <div class="form-group"><label>Password</label><input type="password" id="loginPass" placeholder="••••••••"/></div>
+      <button class="btn-primary full-w" onclick="loginUser()">Login</button>
+      <p class="form-note" style="text-align:center;margin-top:12px"><a href="#" style="color:var(--accent)">Forgot Password?</a></p>
+    </div>
+
+    <div id="registerForm" style="display:none">
+      <h3>Create Account</h3>
+      <div class="form-row">
+        <div class="form-group"><label>First Name</label><input type="text" id="regFirst" placeholder="First"/></div>
+        <div class="form-group"><label>Last Name</label><input type="text" id="regLast" placeholder="Last"/></div>
+      </div>
+      <div class="form-group"><label>Email</label><input type="email" id="regEmail" placeholder="you@email.com"/></div>
+      <div class="form-group"><label>Phone</label><input type="tel" id="regPhone" placeholder="+91 XXXXX XXXXX"/></div>
+      <div class="form-group"><label>Password</label><input type="password" id="regPass" placeholder="Min 8 characters"/></div>
+      <div class="form-group"><label>Confirm Password</label><input type="password" id="regPass2" placeholder="Repeat password"/></div>
+      <button class="btn-primary full-w" onclick="registerUser()">Create Account</button>
+    </div>
+  </div>
+</div>
+
+<!-- Success Modal -->
+<div class="modal-overlay" id="successModal" onclick="closeModalOuter(event,'successModal')">
+  <div class="modal modal-sm">
+    <button class="modal-close" onclick="closeModal('successModal')">✕</button>
+    <div class="success-icon">✅</div>
+    <h3 id="successTitle">Success!</h3>
+    <p id="successMsg">Your appointment has been booked successfully.</p>
+    <button class="btn-primary full-w" onclick="closeModal('successModal')">Done</button>
+  </div>
+</div>
+
+<!-- Toast Notification -->
+<div class="toast" id="toast"></div>
+
+<script src="script.js"></script>
+</body>
+</html>
